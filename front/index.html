@@ -18,10 +18,10 @@
           links.
         </h3>
       </div>
-      <form action="http://localhost:3333" method="post">
+      <form action="https://https://www.google.com/" method="post">
         <div class="container-input">
           <input type="text" name="url" placeholder="Cole sua URL aqui" />
-          <button type="submit">ENCURTAR</button>
+          <button type="submit" onclick="submitForm(event)">ENCURTAR</button>
         </div>
       </form>
 
@@ -33,5 +33,11 @@
     <footer>
       <p>© ShortLinker, Inc. 2024. We love our users!</p>
     </footer>
+
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+      }
+    </script>
   </body>
 </html>
