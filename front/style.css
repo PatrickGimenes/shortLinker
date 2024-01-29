@@ -40,6 +40,9 @@ header h1 {
   margin: 20px 0;
 }
 
+.text-container h1 {
+  margin-bottom: 15px;
+}
 .container-input input,
 .container-input button {
   max-width: 100%;
