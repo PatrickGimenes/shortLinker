@@ -2,11 +2,14 @@ import * as crypto from "crypto";
 
 export function genShort(longUrl: string) {
   const hash = crypto.createHash("sha256").update(longUrl).digest("hex");
-  const base64Key = Buffer.from(hash, "hex").toString("base64");
+  const base64Key = hash
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=/g, "");
   const shortUrl = base64Key.slice(0, 7);
 
   const randomChars = generateRandomChars(7 - shortUrl.length);
-  const randomShortUrl = shortUrl + randomChars;
+  const randomShortUrl = shortUrl + randomChars.replace(/\//g, "A");
 
   return randomShortUrl;
 }
