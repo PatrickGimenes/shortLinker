@@ -17,7 +17,7 @@ class UrlController {
   }
   async shortenUrl(req: Request, res: Response, next: NextFunction) {
     try {
-      const { id, long } = req.params;
+      const { id, long } = req.body;
       const short = genShort(long);
       const url = await this.urlUseCase.shortenUrl(id, long, short);
       return res.json(url);
@@ -27,4 +27,4 @@ class UrlController {
     }
   }
 }
-export { UrlUseCase };
+export { UrlController };

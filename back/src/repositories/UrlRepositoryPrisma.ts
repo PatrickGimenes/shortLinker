@@ -21,10 +21,10 @@ class UrlRepositoryPrisma implements UrlRepository {
     });
     return url;
   }
-  async getUrl(id: string): Promise<IUrl[]> {
+  async getUrl(short_url: string): Promise<IUrl[]> {
     const url = await prisma.uRL.findMany({
       where: {
-        id,
+        short_url,
       },
     });
     return url;
